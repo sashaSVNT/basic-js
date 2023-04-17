@@ -20,13 +20,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 class VigenereCipheringMachine {
-  encrypt() {
-
+  constructor(isDirect = true) {
+    this.isDirect = isDirect;
   }
-  decrypt() {
+  encrypt(message, key) {
+    if (!message || !key) {
+      throw new Error('Incorrect arguments!');
+    }
+  }
+
+  decrypt(encryptedMessage, key) {
+    if (!encryptedMessage || !key) {
+      throw new Error('Incorrect arguments!');
+    }
 
   }
 }
+
 
 module.exports = {
   VigenereCipheringMachine
