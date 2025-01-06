@@ -13,7 +13,7 @@ function transform(arr) {
         i++;
         break;
       case '--discard-prev':
-        if (result.length > 0) {
+        if (result.length > 0 && arr[i - 2] !== '--discard-next') {
           result.pop();
         }
         break;
@@ -28,9 +28,7 @@ function transform(arr) {
         }
         break;
       default:
-        if (arr[i - 1] !== '--discard-next') {
-          result.push(arr[i]);
-        }
+        result.push(arr[i]);
     }
   }
 
